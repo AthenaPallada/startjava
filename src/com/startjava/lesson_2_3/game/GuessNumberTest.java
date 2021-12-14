@@ -5,36 +5,22 @@ import java.util.Scanner;
 public class GuessNumberTest  {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        GuessNumber game = new GuessNumber();
 
-        System.out.println("Введите имя первого игрока");
-        Player playerOne = new Player(input.nextLine());
-        System.out.println("Введите имя второго игрока");
-        Player playerTwo = new Player(input.nextLine());
+        System.out.print("Введите имя первого игрока - ");
+        String name1 = input.nextLine();
+        Player player1 = new Player(name1);
+        System.out.print("Введите имя второго игрока - ");
+        String name2 = input.nextLine();
+        Player player2 = new Player(name2);
 
-        int targetNumber = (int) (Math.random() * 100);
-        int guess1;
-        int guess2; 
-        do {
-            System.out.print(playerOne.getName() + " введите число (от 0 - до 100): ");
-            guess1 = input.nextInt();
-                if (guess1 > targetNumber) {
-                    System.out.println("Данное число больше того, что загадал компьютер");
-                } else if (guess1 < targetNumber) {
-                    System.out.println("Данное число меньше того, что загадал компьютер");
+        GuessNumber game = new GuessNumber(player1,player2);
+        String answer = "yes";
+            do {
+                if("yes".equals(answer)) {
+                    game.startGame();
                 }
-            System.out.print(playerTwo.getName() + " игрок введите число (от 0 - до 100): ");
-            guess2 = input.nextInt();
-                if (guess2 > targetNumber) {
-                    System.out.println("Данное число больше того, что загадал компьютер");
-                } else if (guess2 < targetNumber) {
-                    System.out.println("Данное число меньше того, что загадал компьютер");
-                }
-
-        } while (guess1 != targetNumber & guess2 != targetNumber);
-                System.out.println("Поздравляю, число угадано");       
-    
-        game.startGame();
-
+                System.out.println("Хотите продолжить вычисления? [y/n]");
+                answer = input.nextLine();
+            } while (!"no".equals(answer));
     }
 }
