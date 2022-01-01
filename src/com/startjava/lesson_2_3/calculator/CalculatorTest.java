@@ -8,13 +8,9 @@ public class CalculatorTest {
         Scanner input = new Scanner(System.in);
         char answer = 'y';
         while (answer != 'n') {   
-            System.out.print("Ведите первое число:");
-            calculatorOne.setNumber1(input.nextInt());
-            System.out.print("Введите знак математической операции:");
-            calculatorOne.setOperator(input.next().charAt(0));
-            System.out.print("Ведите второе число:"); 
-            calculatorOne.setNumber2(input.nextInt());
-            calculatorOne.calculate();
+            System.out.print("Введите математическое выражения: ");
+            String expression = input.nextLine();
+            calculatorOne.calculate(expression);
             do {
                 System.out.println("Хотите продолжить вычисления? [y/n]");
                 answer = input.next().charAt(0);
