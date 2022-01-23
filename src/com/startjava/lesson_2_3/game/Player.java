@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int[] numbers = new int[10]; // создание массива 10
-    private int counter;//счетчик
+    private int[] numbers = new int[10];
+    private int counter;
     
     public Player (String name) {
         this.name = name;
@@ -24,7 +24,7 @@ public class Player {
         return numbers[counter - 1];
     }
 
-    public int[] getEnteredNums() {
+    public int[] getEnteredNumbers() {
         return Arrays.copyOf(numbers, counter);
     }
 
@@ -32,7 +32,7 @@ public class Player {
         return counter;
     }
 
-    public void erase() {
+    public void clear() {
         Arrays.fill(numbers, 0, counter, 0);
         counter = 0;
     }
