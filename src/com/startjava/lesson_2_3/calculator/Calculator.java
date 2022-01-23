@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
     private int number1;
@@ -7,10 +7,10 @@ public class Calculator {
 
     void calculate(String expression) {
         int result;
-        String[] array = expression.split(" ");
-        number1 = Integer.parseInt(array[0]);
-        operator =  array[1].charAt(0);
-        number2 = Integer.parseInt(array[2]);
+        String[] statement = expression.split(" ");
+        number1 = Integer.parseInt(statement[0]);
+        operator = statement[1].charAt(0);
+        number2 = Integer.parseInt(statement[2]);
         switch (operator) {
             case '+':
                 result = number1 + number2;
@@ -37,5 +37,6 @@ public class Calculator {
                 System.out.println("Результат операции: " + result);
                 break;
         }
+        return;
     }
 }
