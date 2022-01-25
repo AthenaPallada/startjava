@@ -60,11 +60,11 @@ public class GuessNumber {
         int num = player.getNumber();
         if (num == secretNumber) {
             System.out.println(player.getName() + " угадал число " + num + " c " + player.getCount() + " попытки");
-        } else {
-            String result = num < secretNumber ? " меньше " : " больше ";
-            System.out.println("Данное число " + num + result + "загаданного");
+        return true;
         }
-        return (num == secretNumber);
+        String result = num < secretNumber ? " меньше " : " больше ";
+        System.out.println("Данное число " + num + result + "загаданного");
+        return false;
     }
 
     private void showNumbers(Player player) {

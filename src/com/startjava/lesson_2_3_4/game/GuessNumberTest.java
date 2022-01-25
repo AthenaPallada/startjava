@@ -15,12 +15,12 @@ public class GuessNumberTest  {
 
         GuessNumber game = new GuessNumber(player1, player2);
         String answer = "yes";
-            do {
-                if("yes".equals(answer)) {
-                    game.start();
-                }
-                System.out.println("Хотите продолжить вычисления? [y/n]");
-                answer = scan.nextLine();
-            } while (!"no".equals(answer));
+        do {
+            if("yes".equals(answer)) {
+                game.start();
+            }
+            System.out.println("Хотите продолжить вычисления? [y/n]");
+            answer = scan.nextLine();
+        } while (!"no".equals(answer));
     }
 }

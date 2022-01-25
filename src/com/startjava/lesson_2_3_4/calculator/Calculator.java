@@ -9,7 +9,6 @@ public class Calculator {
     private int number2;
 
     public int calculate(String expression) {
-        int result;
         String[] partsExpression = expression.split(" ");
         number1 = Integer.parseInt(partsExpression[0]);
         mathSign = partsExpression[1].charAt(0);
@@ -29,7 +28,7 @@ public class Calculator {
                 return floorMod(number1, number2);
             default:
                 System.out.println("Вы ввели неправильный знак");
-                return -1;
+                return 0;
         }   
     }
 }
